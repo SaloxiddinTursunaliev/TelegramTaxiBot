@@ -1,0 +1,654 @@
+create table language (
+id varchar(255),
+language varchar(25)
+);
+create table file_info (
+price varchar(255),
+fileid varchar(255)
+);
+create table message_id (
+user_id varchar(255),
+orde int(255),
+id varchar(255)
+);
+create table buyurtma (
+id varchar(255),
+phone varchar(255),
+orde int(255),
+car varchar(255),
+cDate DATE,
+cTime TIME,
+narxi int(255),
+bajarilgan_ishlari varchar(255),
+ishchi_qabul_qilgan_kun DATE,
+ishchi_qabul_qilgan_soat TIME,
+vazifa varchar(10000),
+address varchar(5000)
+);
+create table ishchi_registration_info (
+id varchar(255),
+car varchar(255),
+raqam varchar(255),
+name varchar(255),
+reg_date DATE,
+reg_time TIME,
+stars varchar(40),
+status varchar(10),
+feedback varchar(400)
+);
+
+
+
+
+
+create table trucks (
+car varchar(255),
+car_reg varchar(255)
+);
+insert into trucks (`car`, `car_reg`) values ("Taxi", "Taxi_reg");
+insert into trucks (`car`, `car_reg`) values ("Labo", "Labo_reg");
+insert into trucks (`car`, `car_reg`) values ("Motoroller", "Motoroller_reg");
+insert into trucks (`car`, `car_reg`) values ("Munis", "Munis_reg");
+insert into trucks (`car`, `car_reg`) values ("Kamaz", "Kamaz_reg");
+insert into trucks (`car`, `car_reg`) values ("Zil", "Zil_reg");
+insert into trucks (`car`, `car_reg`) values ("Traktor", "Traktor_reg");
+insert into trucks (`car`, `car_reg`) values ("Moskvich", "Moskvich_reg");
+insert into trucks (`car`, `car_reg`) values ("Jiguli", "Jiguli_reg");
+
+
+
+
+
+create table callback_data_car (
+id varchar(255),
+car varchar(255)
+);
+create table addsub (
+addsubname varchar(255),
+addsub varchar(255),
+ishchiid0 varchar(255),
+userid0 varchar(255),
+umumiyid0 varchar(255),
+addsuborde int(255)
+);
+create table bargain (
+user_id varchar(255),
+ishchi_id varchar(255),
+umumiy_id varchar(255),
+narxi int(255),
+orde int(255),
+addsub varchar(255),
+callok varchar(255)
+);
+create table callback_message_id (
+userid varchar(255),
+orde int(255),
+messageid varchar(255)
+);
+create table bot_test (
+id varchar(255)
+);
+
+
+
+
+
+create table language_list (
+language_type varchar(255),
+language_code varchar(64),
+status int(10)
+);
+ALTER TABLE language_list CONVERT TO CHARACTER SET utf8;
+insert into language_list (`language_type`, `language_code`, `status`) values ("English", "eng", 0);
+insert into language_list (`language_type`, `language_code`, `status`) values ("Қазақ", "kaz", 0);
+insert into language_list (`language_type`, `language_code`, `status`) values ("Кыргызча", "krz", 0);
+insert into language_list (`language_type`, `language_code`, `status`) values ("Русский", "fa", 1);
+insert into language_list (`language_type`, `language_code`, `status`) values ("O'zbekcha", "en", 1);
+insert into language_list (`language_type`, `language_code`, `status`) values ("Точикӣ", "tjk", 0);
+insert into language_list (`language_type`, `language_code`, `status`) values ("Türkmen", "trk", 0);
+
+
+
+
+
+create table abstract_address (
+id varchar(255),
+categories varchar(255),
+region varchar(255),
+city varchar(255),
+language varchar(40)
+);
+ALTER TABLE abstract_address CONVERT TO CHARACTER SET utf8;
+
+
+
+
+
+create table province_address (
+categories varchar(255),
+orde int(20),
+language varchar(40),
+status int(10)
+);
+ALTER TABLE province_address CONVERT TO CHARACTER SET utf8;
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Toshkent", 1, "en", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Andijon", 2, "en", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Buxoro", 3, "en", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Fargʻona", 4, "en", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Jizzax", 5, "en", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Xorazm", 6, "en", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Namangan", 7, "en", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Navoiy", 8, "en", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Qashqadaryo", 9, "en", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Qoraqalpogʻiston", 10, "en", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Samarqand", 11, "en", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Sirdaryo", 12, "en", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Surxondaryo", 13, "en", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Ташкент", 1, "fa", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Андижан", 2, "fa", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Бухара", 3, "fa", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Фергана", 4, "fa", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Джизак", 5, "fa", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Хорезм", 6, "fa", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Наманган", 7, "fa", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Навои", 8, "fa", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Кашкадарья", 9, "fa", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Каракалпакстан", 10, "fa", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Самарканд", 11, "fa", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Сырдарья", 12, "fa", 1);
+insert into province_address (`categories`, `orde`, `language`, `status`) values ("Сурхандарья", 13, "fa", 1);
+
+
+
+
+
+create table region_address (
+categories varchar(255),
+orde int(20),
+regions varchar(255),
+language varchar(40),
+status int(10)
+);
+ALTER TABLE region_address CONVERT TO CHARACTER SET utf8;
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Toshkent", 1, "Toshkent shahri", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Toshkent", 1, "Bekobod", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Toshkent", 1, "Boʻstonliq", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Toshkent", 1, "Bo'ka", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Toshkent", 1, "Chinoz", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Toshkent", 1, "Qibray", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Toshkent", 1, "Ohangaron", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Toshkent", 1, "Oqqo'rg'on", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Toshkent", 1, "Parkent", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Toshkent", 1, "Piskent", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Toshkent", 1, "Quyi Chirchiq", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Toshkent", 1, "O'rta Chirchiq", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Toshkent", 1, "Yangiyo'l", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Toshkent", 1, "Yuqori Chirchiq", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Toshkent", 1, "Zangiota", "en", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Andijon", 2, "Andijon shahri", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Andijon", 2, "Asaka", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Andijon", 2, "Baliqchi", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Andijon", 2, "Bo'z", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Andijon", 2, "Buloqboshi", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Andijon", 2, "Izboskan", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Andijon", 2, "Jalaquduq", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Andijon", 2, "Xo'jaobod", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Andijon", 2, "Qo'rg'ontepa", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Andijon", 2, "Marhamat", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Andijon", 2, "Oltinko'l", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Andijon", 2, "Paxtaobod", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Andijon", 2, "Shahrixon", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Andijon", 2, "Ulug'nor", "en", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Buxoro", 3, "Buxoro shahri", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Buxoro", 3, "Olot", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Buxoro", 3, "Gijduvon", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Buxoro", 3, "Jondor", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Buxoro", 3, "Kogon", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Buxoro", 3, "Qorako'l", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Buxoro", 3, "Qoravulbozor", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Buxoro", 3, "Peshku", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Buxoro", 3, "Romitan", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Buxoro", 3, "Shofirkon", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Buxoro", 3, "Vobkent", "en", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Fargʻona", 4, "Fargo'na shahri", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Fargʻona", 4, "Oltiariq", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Fargʻona", 4, "Bag'dod", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Fargʻona", 4, "Beshariq", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Fargʻona", 4, "Buvayda", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Fargʻona", 4, "Dang'ara", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Fargʻona", 4, "Furqat", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Fargʻona", 4, "Qo'shtepa", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Fargʻona", 4, "Quva", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Fargʻona", 4, "Rishton", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Fargʻona", 4, "So'x", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Fargʻona", 4, "Toshloq", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Fargʻona", 4, "Uchko'prik", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Fargʻona", 4, "O'zbekiston", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Fargʻona", 4, "Yozyovon", "en", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Jizzax", 5, "Jizzax shahri", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Jizzax", 5, "Arnasoy", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Jizzax", 5, "Baxmal", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Jizzax", 5, "Do'stlik", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Jizzax", 5, "Forish", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Jizzax", 5, "G'allaorol", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Jizzax", 5, "Mirzacho'l", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Jizzax", 5, "Paxtakor", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Jizzax", 5, "Yangiobod", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Jizzax", 5, "Zomin", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Jizzax", 5, "Zafarobod", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Jizzax", 5, "Zarbdor", "en", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Xorazm", 6, "Xiva", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Xorazm", 6, "Bog'ot", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Xorazm", 6, "Gurlan", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Xorazm", 6, "Xonqa", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Xorazm", 6, "Hazorasp", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Xorazm", 6, "Qo'shko'pir", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Xorazm", 6, "Shovot", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Xorazm", 6, "Urganch", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Xorazm", 6, "Yangiariq", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Xorazm", 6, "Yangibozor", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Xorazm", 6, "Tuproqqal'a", "en", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Namangan", 7, "Namangan shahri", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Namangan", 7, "Chortoq", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Namangan", 7, "Chust", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Namangan", 7, "Kosonsoy", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Namangan", 7, "Mingbuloq", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Namangan", 7, "Norin", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Namangan", 7, "Pop", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Namangan", 7, "To'raqo'rg'on", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Namangan", 7, "Uchqo'rg'on", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Namangan", 7, "Uychi", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Namangan", 7, "Yangiqo'rg'on", "en", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Navoiy", 8, "Konimex", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Navoiy", 8, "Karmana", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Navoiy", 8, "Qiziltepa", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Navoiy", 8, "Xatirchi", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Navoiy", 8, "Navbahor", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Navoiy", 8, "Nurota", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Navoiy", 8, "Tomdi", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Navoiy", 8, "Uchquduq", "en", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qashqadaryo", 9, "Chiroqchi", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qashqadaryo", 9, "Dehqonobod", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qashqadaryo", 9, "Gu'zor", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qashqadaryo", 9, "Qamashi", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qashqadaryo", 9, "Qarshi", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qashqadaryo", 9, "Koson", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qashqadaryo", 9, "Kasbi", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qashqadaryo", 9, "Kitob", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qashqadaryo", 9, "Mirishkor", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qashqadaryo", 9, "Muborak", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qashqadaryo", 9, "Nishon", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qashqadaryo", 9, "Shahrisabz", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qashqadaryo", 9, "Yakkabog'", "en", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qoraqalpogʻiston", 10, "Nukus", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qoraqalpogʻiston", 10, "Amudaryo", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qoraqalpogʻiston", 10, "Beruniy", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qoraqalpogʻiston", 10, "Chimboy", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qoraqalpogʻiston", 10, "Ellikqal'a", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qoraqalpogʻiston", 10, "Kegeyli", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qoraqalpogʻiston", 10, "Mo'ynoq", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qoraqalpogʻiston", 10, "Qanliko'l", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qoraqalpogʻiston", 10, "Qo'ng'irot", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qoraqalpogʻiston", 10, "Qorao'zak", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qoraqalpogʻiston", 10, "Shumanay", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qoraqalpogʻiston", 10, "Taxtako'pir", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qoraqalpogʻiston", 10, "To'rtko'l", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Qoraqalpogʻiston", 10, "Xo'jayli", "en", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Samarqand", 11, "Samarqand shahri", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Samarqand", 11, "Bulung'ur", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Samarqand", 11, "Ishtixon", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Samarqand", 11, "Jomboy", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Samarqand", 11, "Kattaqo'rg'on", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Samarqand", 11, "Qo'shrabot", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Samarqand", 11, "Narpay", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Samarqand", 11, "Nurobod", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Samarqand", 11, "Oqdaryo", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Samarqand", 11, "Paxtachi", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Samarqand", 11, "Payariq", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Samarqand", 11, "Pastdarg'om", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Samarqand", 11, "Toyloq", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Samarqand", 11, "Urgut", "en", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Sirdaryo", 12, "Sirdaryo shahri", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Sirdaryo", 12, "Guliston", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Sirdaryo", 12, "Oqoltin", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Sirdaryo", 12, "Boyovut", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Sirdaryo", 12, "Xovos", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Sirdaryo", 12, "Mirzaobod", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Sirdaryo", 12, "Sayxunobod", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Sirdaryo", 12, "Sardoba", "en", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Surxondaryo", 13, "Termiz", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Surxondaryo", 13, "Angor", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Surxondaryo", 13, "Boysun", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Surxondaryo", 13, "Denov", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Surxondaryo", 13, "Jarqo'rg'on", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Surxondaryo", 13, "Qiziriq", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Surxondaryo", 13, "Qumqo'rg'on", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Surxondaryo", 13, "Muzrabot", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Surxondaryo", 13, "Oltinsoy", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Surxondaryo", 13, "Sariosiyo", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Surxondaryo", 13, "Sherobod", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Surxondaryo", 13, "Sho'rchi", "en", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Surxondaryo", 13, "Uzun", "en", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Ташкент", 1, "Город Ташкент", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Ташкент", 1, "Бекабад", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Ташкент", 1, "Бостанлык", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Ташкент", 1, "Бука", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Ташкент", 1, "Чиназ", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Ташкент", 1, "Кибрай", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Ташкент", 1, "Ахангаран", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Ташкент", 1, "Аккурган", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Ташкент", 1, "Паркент", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Ташкент", 1, "Пскент", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Ташкент", 1, "Куйичирчик", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Ташкент", 1, "Уртачирчик", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Ташкент", 1, "Янгиюль", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Ташкент", 1, "Юкоричирчик", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Ташкент", 1, "Зангиата", "fa", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Андижан", 2, "Город Андижан", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Андижан", 2, "Асака", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Андижан", 2, "Балыкчи", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Андижан", 2, "Буз", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Андижан", 2, "Булакбаши", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Андижан", 2, "Избаскан", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Андижан", 2, "Джалакудук", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Андижан", 2, "Ходжаабад", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Андижан", 2, "Кургантепа", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Андижан", 2, "Мархамат", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Андижан", 2, "Алтынкуль", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Андижан", 2, "Пахтаабад", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Андижан", 2, "Шахрихан", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Андижан", 2, "Улугнор", "fa", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Бухара", 3, "Город Бухара", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Бухара", 3, "Алат", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Бухара", 3, "Гиждуван", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Бухара", 3, "Жондор", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Бухара", 3, "Каган", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Бухара", 3, "Каракуль", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Бухара", 3, "Караулбазар", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Бухара", 3, "Пешку", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Бухара", 3, "Ромитан", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Бухара", 3, "Шафиркан", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Бухара", 3, "Вабкент", "fa", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Фергана", 4, "Город Фергана", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Фергана", 4, "Алтыарык", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Фергана", 4, "Багдад", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Фергана", 4, "Бешарык", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Фергана", 4, "Бувайда", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Фергана", 4, "Дангара", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Фергана", 4, "Фуркат", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Фергана", 4, "Куштепа", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Фергана", 4, "Кува", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Фергана", 4, "Риштан", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Фергана", 4, "Сох", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Фергана", 4, "Ташлак", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Фергана", 4, "Учкуприк", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Фергана", 4, "Узбекистан", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Фергана", 4, "Язъяван", "fa", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Джизак", 5, "Город Джизак", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Джизак", 5, "Арнасай", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Джизак", 5, "Бахмаль", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Джизак", 5, "Дустлик", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Джизак", 5, "Фариш", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Джизак", 5, "Галляараль", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Джизак", 5, "Мирзачуль", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Джизак", 5, "Пахтакор", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Джизак", 5, "Янгиабад", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Джизак", 5, "Заамин", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Джизак", 5, "Зафарабад", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Джизак", 5, "Зарбдар", "fa", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Хорезм", 6, "Хива", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Хорезм", 6, "Багат", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Хорезм", 6, "Гурлен", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Хорезм", 6, "Ханка", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Хорезм", 6, "Хазарасп", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Хорезм", 6, "Кошкупыр", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Хорезм", 6, "Шават", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Хорезм", 6, "Ургенч", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Хорезм", 6, "Янгиарык", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Хорезм", 6, "Янгибазар", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Хорезм", 6, "Тупроккала", "fa", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Наманган", 7, "Город Наманган", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Наманган", 7, "Чартак", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Наманган", 7, "Чуст", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Наманган", 7, "Касансай", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Наманган", 7, "Мингбулак", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Наманган", 7, "Нарын", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Наманган", 7, "Пап", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Наманган", 7, "Туракурган", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Наманган", 7, "Учкурган", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Наманган", 7, "Уйчи", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Наманган", 7, "Янгикурган", "fa", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Навои", 8, "Канимех", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Навои", 8, "Кармана", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Навои", 8, "Кызылтепа", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Навои", 8, "Хатырчи", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Навои", 8, "Навбахор", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Навои", 8, "Нурата", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Навои", 8, "Тамды", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Навои", 8, "Учкудук", "fa", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Кашкадарья", 9, "Чиракчи", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Кашкадарья", 9, "Дехканабад", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Кашкадарья", 9, "Гузар", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Кашкадарья", 9, "Камаши", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Кашкадарья", 9, "Карши", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Кашкадарья", 9, "Касан", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Кашкадарья", 9, "Касби", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Кашкадарья", 9, "Китаб", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Кашкадарья", 9, "Миришкор", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Кашкадарья", 9, "Мубарек", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Кашкадарья", 9, "Нишан", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Кашкадарья", 9, "Шахрисабз", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Кашкадарья", 9, "Яккабаг'", "fa", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Каракалпакстан", 10, "Нукус", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Каракалпакстан", 10, "Амударья", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Каракалпакстан", 10, "Беруний", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Каракалпакстан", 10, "Чимбай", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Каракалпакстан", 10, "Элликкала", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Каракалпакстан", 10, "Кегейлий", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Каракалпакстан", 10, "Муйнак", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Каракалпакстан", 10, "Канлыкуль", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Каракалпакстан", 10, "Кунград", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Каракалпакстан", 10, "Караузяк", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Каракалпакстан", 10, "Шуманай", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Каракалпакстан", 10, "Тахтакупыр", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Каракалпакстан", 10, "Турткуль", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Каракалпакстан", 10, "Ходжейлий", "fa", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Самарканд", 11, "Город Самарканд", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Самарканд", 11, "Булунгур", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Самарканд", 11, "Иштыхан", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Самарканд", 11, "Джамбай", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Самарканд", 11, "Каттакурган", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Самарканд", 11, "Кошрабад", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Самарканд", 11, "Нарпай", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Самарканд", 11, "Нурабад", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Самарканд", 11, "Акдарья", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Самарканд", 11, "Пахтачи", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Самарканд", 11, "Пайарык", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Самарканд", 11, "Пастдаргом", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Самарканд", 11, "Тайлак", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Самарканд", 11, "Ургут", "fa", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сырдарья", 12, "Город Сырдарья", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сырдарья", 12, "Гулистан", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сырдарья", 12, "Акалтын", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сырдарья", 12, "Баяут", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сырдарья", 12, "Хавас", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сырдарья", 12, "Мирзаабад", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сырдарья", 12, "Сайхунабад", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сырдарья", 12, "Сардоба", "fa", 1);
+
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сурхандарья", 13, "Термиз", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сурхандарья", 13, "Ангор", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сурхандарья", 13, "Байсун", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сурхандарья", 13, "Денау", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сурхандарья", 13, "Джаркурган", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сурхандарья", 13, "Кизирик", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сурхандарья", 13, "Кумкурган", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сурхандарья", 13, "Музрабад", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сурхандарья", 13, "Алтынсай", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сурхандарья", 13, "Сариасия", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сурхандарья", 13, "Шерабад", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сурхандарья", 13, "Шурчи", "fa", 1);
+insert into region_address (`categories`, `orde`, `regions`, `language`, `status`) values ("Сурхандарья", 13, "Узун", "fa", 1);
+
+
+
+
+
+
+create table main_menu (
+categories varchar(255),
+orde int(20),
+language varchar(40),
+status int(10)
+);
+ALTER TABLE main_menu CONVERT TO CHARACTER SET utf8;
+insert into main_menu (`categories`, `orde`, `language`, `status`) values ("Taksi", 1, "en", 1);
+insert into main_menu (`categories`, `orde`, `language`, `status`) values ("Oziq-ovqat do'konlar", 2, "en", 1);
+insert into main_menu (`categories`, `orde`, `language`, `status`) values ("Boshqa do'konlar", 3, "en", 1);
+insert into main_menu (`categories`, `orde`, `language`, `status`) values ("Etkazib berishlar", 4, "en", 1);
+insert into main_menu (`categories`, `orde`, `language`, `status`) values ("Такси", 1, "fa", 1);
+insert into main_menu (`categories`, `orde`, `language`, `status`) values ("Продуктовые магазины", 2, "fa", 1);
+insert into main_menu (`categories`, `orde`, `language`, `status`) values ("Другие магазины", 3, "fa", 1);
+insert into main_menu (`categories`, `orde`, `language`, `status`) values ("Доставка", 4, "fa", 1);
+
+
+
+
+
+
+create table taxi (
+car varchar(255),
+car_reg varchar(255),
+language varchar(40),
+status int(10)
+);
+ALTER TABLE taxi CONVERT TO CHARACTER SET utf8;
+insert into taxi (`car`, `car_reg`, `language`, `status`) values ("Tracker", "Tracker_reg", "en", 1);
+insert into taxi (`car`, `car_reg`, `language`, `status`) values ("Captiva", "Captive_reg", "en", 1);
+insert into taxi (`car`, `car_reg`, `language`, `status`) values ("Malibu", "Malibu_reg", "en", 1);
+insert into taxi (`car`, `car_reg`, `language`, `status`) values ("Lacetti", "Lacetti_reg", "en", 1);
+insert into taxi (`car`, `car_reg`, `language`, `status`) values ("Cobalt", "Cobalt_reg", "en", 1);
+insert into taxi (`car`, `car_reg`, `language`, `status`) values ("Nexia", "Nexia_reg", "en", 1);
+insert into taxi (`car`, `car_reg`, `language`, `status`) values ("Spark", "Spark_reg", "en", 1);
+insert into taxi (`car`, `car_reg`, `language`, `status`) values ("Matiz", "Matiz_reg", "en", 1);
+insert into taxi (`car`, `car_reg`, `language`, `status`) values ("Трэкер", "Tracker_reg", "fa", 1);
+insert into taxi (`car`, `car_reg`, `language`, `status`) values ("Каптива", "Captive_reg", "fa", 1);
+insert into taxi (`car`, `car_reg`, `language`, `status`) values ("Малибу", "Malibu_reg", "fa", 1);
+insert into taxi (`car`, `car_reg`, `language`, `status`) values ("Ласетти", "Lacetti_reg", "fa", 1);
+insert into taxi (`car`, `car_reg`, `language`, `status`) values ("Кобальт", "Cobalt_reg", "fa", 1);
+insert into taxi (`car`, `car_reg`, `language`, `status`) values ("Нексиа", "Nexia_reg", "fa", 1);
+insert into taxi (`car`, `car_reg`, `language`, `status`) values ("Спарк", "Spark_reg", "fa", 1);
+insert into taxi (`car`, `car_reg`, `language`, `status`) values ("Матиз", "Matiz_reg", "fa", 1);
+
+UPDATE taxi SET status=0 where car="Captiva";
+
+
+
+
+create table user_registration_info (
+id varchar(255),
+country varchar(255),
+province varchar(255),
+town varchar(255),
+reg_date DATE,
+reg_time TIME,
+stars varchar(40),
+);
+
+
+
+
+delete from buyurtma where id = 1051015468;
+delete from message_id where user_id = 1051015468;
+delete from language where id = 1051015468;
+delete from ishchi_registration_info where id = 1051015468;
+delete from buyurtma where id = 1012254767;
+delete from buyurtma where id = 697226095;
+delete from message_id where user_id = 1012254767;
+delete from message_id where user_id = 697226095;
+delete from language where id = 1012254767;
+delete from language where id = 697226095;
+delete from ishchi_registration_info where id = 1012254767;
+delete from ishchi_registration_info where id = 697226095;
+delete from bargain where user_id = 1051015468;
+delete from bargain where user_id = 1012254767;
+delete from bargain where user_id = 697226095;
+delete from addsub where ishchiid0 = 1012254767;
+delete from addsub where ishchiid0 = 697226095;
+delete from addsub where ishchiid0 = 1051015468;
+delete from callback_message_id where userid = 1012254767;
+delete from callback_message_id where userid = 697226095;
+delete from callback_message_id where userid = 1051015468;
+select * from language;
+select * from message_id;
+select * from buyurtma;
+select * from ishchi_registration_info;
+select * from bargain;
+select * from callback_message_id;
+
+
+
+
+
+
+insert into xozirda_boshlar1 (`id`, `name`, `status`, `car_num`, `stars`, `feedback`) values (1051015468, "Farhod", "0", "60R567AE", "5", "Boladi");
+
+
+UPDATE buyurtma SET narxi="15000", bajarilgan_ishlari="1051015468", ishchi_qabul_qilgan_kun="2020-05-22", ishchi_qabul_qilgan_soat="01:14:03" WHERE id="1051015468";
+
+
+UPDATE buyurtma SET orde="1", cDate="2020-05-22", cTime="01:14:03", narxi="15000", bajarilgan_ishlari="1051015468", ishchi_qabul_qilgan_kun="2020-05-22", ishchi_qabul_qilgan_soat="01:14:03", vazifa="v", address="d" WHERE id="1012254767";
+
+
+insert into buyurtma (`narxi`, `bajarilgan_ishlari`, `ishchi_qabul_qilgan_kun`, `ishchi_qabul_qilgan_soat`) values ("15000", "1051015468", "2020-05-22", "01:14:03");
+
+
+
+
+
+delete from buyurtma where id = 1012254767;
+delete from buyurtma where id = 697226095;
+delete from message_id where user_id = 1012254767;
+delete from message_id where user_id = 697226095;
+delete from language where id = 1012254767;
+delete from language where id = 697226095;
+delete from ishchi_registration_info where id = 1012254767;
+delete from ishchi_registration_info where id = 697226095;
+delete from bargain where user_id = 1012254767;
+delete from bargain where user_id = 697226095;
+delete from addsub where ishchiid0 = 1012254767;
+delete from addsub where ishchiid0 = 697226095;
+delete from callback_message_id where userid = 1012254767;
+delete from callback_message_id where userid = 1051015468; 
+delete from callback_message_id where userid = 697226095;
+select * from language;
+select * from message_id;
+select * from buyurtma;
+select * from ishchi_registration_info;
+select * from bargain;
+select * from callback_message_id;
+
